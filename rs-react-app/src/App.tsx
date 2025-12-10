@@ -1,15 +1,14 @@
-import './App.css';
+import "./App.css";
+import "./css/header.css";
 
-function App() {
+import Header from "./components/Header.tsx";
+
+export default function App() {
   return (
     <>
-      <Header />
+       <div className="wrapper">
+           <Header />
+       </div>
     </>
   );
 }
-
-const Header = () => {
-  return <>Header</>;
-};
-
-export default App;
