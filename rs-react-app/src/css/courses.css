@@ -1,0 +1,21 @@
+.courses-inner {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.courses-searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 10px;
+}
+
+.search {
+  outline: none;
+  padding: 10px 5px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}

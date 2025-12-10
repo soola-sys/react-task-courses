@@ -1,20 +1,65 @@
-
 * {
-    box-sizing: border-box;
-    font-family: Roboto sans-serif;
-    font-weight: 400;
+  box-sizing: border-box;
+  font-weight: 400;
 }
 
 body {
-    background: #f9f9f9;
+  background: #f9f9f9;
 }
 
 .wrapper {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 0 20px;
-    width: 100%;
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  flex-direction: column;
 }
 
+.btn-primary {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #1e1e1e;
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+}
 
+.courses {
+  margin-top: 50px;
+}
 
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.courseList {
+  display: flex;
+}
+
+.courseCard-inner {
+  display: flex;
+  align-items: center;
+  gap: 0 100px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.courseCard-list {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.courseCard-btns {
+  display: flex;
+  gap: 0 10px;
+}
+
+.courseList {
+  margin-top: 25px;
+}
