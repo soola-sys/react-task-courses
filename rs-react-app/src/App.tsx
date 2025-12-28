@@ -1,6 +1,7 @@
 import './App.css';
 import './css/header.css';
 import './css/courses.css';
+import './css/course-card.css';
 
 import Header from './components/Header';
 import Courses from './components/Courses';

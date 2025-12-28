@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-weight: 400;
+  font-family: Roboto, sans-serif;
 }
 
 body {
@@ -39,27 +39,6 @@ body {
 
 .courseList {
   display: flex;
-}
-
-.courseCard-inner {
-  display: flex;
-  align-items: center;
-  gap: 0 100px;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.courseCard-list {
-  display: flex;
-  align-items: flex-start;
   flex-direction: column;
-}
-
-.courseCard-btns {
-  display: flex;
-  gap: 0 10px;
-}
-
-.courseList {
-  margin-top: 25px;
+  gap: 25px 0;
 }

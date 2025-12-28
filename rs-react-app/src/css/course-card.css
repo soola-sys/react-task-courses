@@ -1,0 +1,40 @@
+
+.courseCard {
+  padding: 15px 20px;
+  border-radius: 9px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.courseCard-inner {
+  display: flex;
+  align-items: center;
+  gap: 0 100px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.courseCard-list {
+  display: flex;
+  align-items: flex-start;
+  font-weight: 700;
+  gap: 8px 0;
+  flex-direction: column;
+}
+
+.courseCard-btns {
+  display: flex;
+  gap: 0 10px;
+  margin-top: 10px;
+}
+
+.courseList {
+  margin-top: 25px;
+}
+
+.courseCard-text { 
+  margin-top: 10px;
+}
+
+.courseCard-showBtn {
+  width: 152px;
+}
