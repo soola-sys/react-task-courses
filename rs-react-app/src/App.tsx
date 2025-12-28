@@ -4,14 +4,16 @@ import './css/courses.css';
 import './css/course-card.css';
 
 import Header from './components/Header';
-import Courses from './components/Courses';
+// import Courses from './components/Courses';
+import EmptyCoursesList from './components/EmptyCoursesList';
 
 export default function App() {
   return (
     <>
       <div className="wrapper">
         <Header />
-        <Courses />
+        {/* <Courses /> */}
+        <EmptyCoursesList />
       </div>
     </>
   );

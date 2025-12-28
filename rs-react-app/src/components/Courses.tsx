@@ -9,7 +9,7 @@ const Courses = () => {
             <div className="courses-searchbar">
               <input
                 type="text"
-                placeholder="Input..."
+                placeholder="Input text..."
                 className="search"
                 id="search"
                 name="search"
