@@ -54,3 +54,53 @@ body {
 .emptyCoursesList {
   margin-top: 100px;
 }
+
+.courseInfo {
+  margin-top: 100px;
+}
+
+.courseInfo-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 35px 40px;
+  border-radius: 9px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.courseInfo-title {
+  font-weight: 700;
+  font-size: 34px;
+}
+
+.vertical {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid gray;
+}
+
+.courseInfo-content-desc {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.courseInfo-content-right {
+  display: flex;
+  flex-direction: column;
+  gap: 15px 0;
+  font-weight: 700;
+  margin-left: 15px;
+}
+
+.courseInfo-content-left {
+  flex: 1 0 80%;
+}
+
+.courseInfo-content-title {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.courseInfo-btn {
+  margin-top: 30px;
+}

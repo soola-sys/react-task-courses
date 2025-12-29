@@ -38,3 +38,10 @@
 .courseCard-showBtn {
   width: 152px;
 }
+
+.vl {
+  flex: 1;
+  padding: 0.5em;
+  text-align: center;
+  border-right: 1px solid #fff;
+}

@@ -3,8 +3,7 @@ import CourseList from "./CourseList";
 const Courses = () => {
   return (
     <>
-      <main className="courses">
-        <div className="container">
+      <section className="courses">
           <div className="courses-inner">
             <div className="courses-searchbar">
               <input
@@ -19,8 +18,7 @@ const Courses = () => {
             <button className="courses-btn btn-primary">Add new course</button>
           </div>
           <CourseList />
-        </div>
-      </main>
+      </section>
     </>
   );
 };
