@@ -21,10 +21,10 @@ const CourseInfo = () => {
                     <div className="vertical"></div>
                     <div className="courseInfo-content-right">
                         <ul className="courseInfo-content-right courseInfo-list">
-                            <li><p>ID:</p></li>
-                            <li><p>Duration:</p></li>
-                            <li><p>Created:</p></li>
-                            <li><p>Authors:</p></li>
+                            <li><span>ID:</span></li>
+                            <li><span>Duration:</span></li>
+                            <li><span>Created:</span></li>
+                            <li><span>Authors:</span></li>
                         </ul>
                     </div>
                 </section>

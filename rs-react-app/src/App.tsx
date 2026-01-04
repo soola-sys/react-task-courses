@@ -5,7 +5,7 @@ import './css/course-card.css';
 
 import Header from './components/Header';
 import CourseInfo from './components/CourseInfo';
-// import Courses from './components/Courses';
+import Courses from './components/Courses';
 // import EmptyCoursesList from './components/EmptyCoursesList';
 
 export default function App() {
@@ -14,8 +14,8 @@ export default function App() {
       <div className="wrapper">
         <Header />
         <main className="container">
-        <CourseInfo />
-        {/* <Courses /> */}
+        {/* <CourseInfo /> */}
+        <Courses />
         {/* <EmptyCoursesList /> */}
         </main>
       </div>
