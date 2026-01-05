@@ -6,3 +6,8 @@ export interface CourseItemProps {
   duration: number,
   authors: string[] | null;
 }
+
+export type AuthorItemType = {
+    id: string,
+    name: string
+}
