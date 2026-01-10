@@ -11,3 +11,10 @@ export type AuthorItemType = {
     id: string,
     name: string
 }
+
+export type SearchTypes = {
+  class: string,
+  Id: string,
+  Name: string,
+  placeHolder: string
+}

@@ -24,8 +24,6 @@ const renderAuthors = (authorsArray: string[] | null): string => {
   return resultArray.join(',')
 }
 
-
-
 const CourseCard = ({ course }: CourseProp): React.ReactNode => {
   const { title, description, duration, creationDate, authors } = course;
   return (
