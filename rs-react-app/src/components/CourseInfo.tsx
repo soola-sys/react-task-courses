@@ -1,36 +1,46 @@
-const CourseInfo = () => {
-    return (
+import { EMPTY_AUTHORS_LIST } from "../constants/authors";
+import type { CourseItemProps, setCourseOpenType } from "../types/types";
+import { formatDate } from "../utils/formatDate";
+import { formatDuration } from "../utils/formatDuration";
+import { renderAuthors } from "../utils/renderAuthors";
+
+interface CourseInfoProps {
+    currentCourse: CourseItemProps | null
+    isOpen: boolean,
+    resetOpen: setCourseOpenType
+}
+
+
+const CourseInfo = ({isOpen, resetOpen, currentCourse}: CourseInfoProps) => {
+    if(currentCourse) {
+        const {id , title , description , authors, duration , creationDate } = currentCourse;
+         return (
         <>
             <div className="courseInfo">
-                <p className="courseInfo-title">Javascript</p>
+                <p className="courseInfo-title"></p>
                 <section className="courseInfo-content">
                     <div className="courseInfo-content-left">
-                        <p className="courseInfo-content-title">Description</p>
+                        <p className="courseInfo-content-title">{title}</p>
                         <p className="courseInfo-content-desc">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting
-                            industry. Lorem Ipsum has been the industry's standard dummy text
-                            ever since the 1500s, when an unknown printer took a galley of
-                            type and scrambled it to make a type specimen book. It has
-                            survived not only five centuries, but also the leap into
-                            electronic typesetting, remaining essentially unchanged. It was
-                            popularised in the 1960s with the release of Letraset sheets
-                            containing Lorem Ipsum passages, and more recently with desktop
-                            publishing software like Aldus PageMaker including versions of
-                            Lorem Ipsum.</p>
+                           {description}</p>
                     </div>
                     <div className="vertical"></div>
                     <div className="courseInfo-content-right">
                         <ul className="courseInfo-content-right courseInfo-list">
-                            <li><span>ID:</span></li>
-                            <li><span>Duration:</span></li>
-                            <li><span>Created:</span></li>
-                            <li><span>Authors:</span></li>
+                            <li><span>ID:</span>{id}</li>
+                            <li><span>Authors:</span>{renderAuthors(authors) ? renderAuthors(authors) : EMPTY_AUTHORS_LIST}</li>
+                            <li><span>Duration:</span>{formatDuration(duration)} hours</li>
+                            <li><span>Created:</span>{formatDate(creationDate)}</li>
                         </ul>
                     </div>
                 </section>
-                <button className="courseInfo-btn btn-primary">Back</button>
+                <button className="courseInfo-btn btn-primary" onClick={(event) => {
+                    console.log(event);
+                    resetOpen(false);
+                }}>Back</button>
             </div>
         </>
     )
+    }
 }
 export default CourseInfo;

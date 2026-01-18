@@ -1,30 +1,19 @@
 
 import deleteIcon from "../assets/Icon-Trash.svg";
 import editIcon from "../assets/Icon-Edit.svg";
-import type { AuthorItemType, CourseItemProps } from "../types/types";
+import type { CourseItemProps, setCourseOpenType, setCurrentCourseType } from "../types/types";
 import { formatDate } from "../utils/formatDate";
 import { formatDuration } from "../utils/formatDuration";
-import { mockedAuthorsList } from "../mockCoursesList";
+import { renderAuthors } from "../utils/renderAuthors";
+import { EMPTY_AUTHORS_LIST } from "../constants/authors";
 
-type CourseProp = {
-  course: CourseItemProps
+interface CourseProp {
+  course: CourseItemProps,
+  setOpen: setCourseOpenType,
+  setCurrentCourse: setCurrentCourseType;
 }
 
-type CourseAuthors = Pick<CourseItemProps, 'authors'>;
-
-const EMPTY_AUTHORS_LIST = 'No Authors!';
-
-const renderAuthors = (authorsArray: string[] | null): string => {
-  const resultArray: string[] = []
-  mockedAuthorsList.forEach(({id,name}: AuthorItemType) => {
-    if (authorsArray && authorsArray.includes(id)) {
-      resultArray.push(name)
-    }
-  });
-  return resultArray.join(',')
-}
-
-const CourseCard = ({ course }: CourseProp): React.ReactNode => {
+const CourseCard = ({ course, setOpen, setCurrentCourse }: CourseProp): React.ReactNode => {
   const { title, description, duration, creationDate, authors } = course;
   return (
     <div className="courseCard">
@@ -42,7 +31,10 @@ const CourseCard = ({ course }: CourseProp): React.ReactNode => {
             <li><span>Created:</span>{formatDate(creationDate)}</li>
           </ul>
           <div className="courseCard-content-right courseCard-btns">
-            <button className="courseCard-showBtn btn-primary">Show course</button>
+            <button className="courseCard-showBtn btn-primary" onClick={() => {
+              setOpen(true);
+              setCurrentCourse(course);
+            }}>Show course</button>
             <button className="courseCard-deleteBtn btn-primary">
               <img src={deleteIcon} alt="Delete" />
             </button>
