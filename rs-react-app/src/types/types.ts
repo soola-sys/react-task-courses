@@ -13,8 +13,20 @@ export type AuthorItemType = {
 }
 
 export type SearchTypes = {
+  Type: string
   class: string,
   Id: string,
   Name: string,
   placeHolder: string
 }
+
+export interface CoursesProps  {
+  courses: CourseItemProps[] | null,
+  setCourses: (courses: CourseItemProps[]| null) => void,
+  setCurrentCourse: setCurrentCourseType,
+  setOpen: setCourseOpenType
+}
+
+export type setCourseOpenType = (isOpen: boolean | null) => void;
+
+export type setCurrentCourseType = (course: CourseItemProps) => void;
