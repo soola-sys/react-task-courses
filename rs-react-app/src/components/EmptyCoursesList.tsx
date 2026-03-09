@@ -1,12 +1,23 @@
+import type { CoursesProps } from "../types/types";
+import { mockedCoursesList } from '../mockCoursesList';
+import { EMPTY_COURSES_LIST } from "../constants/courses";
 
-const EmptyCoursesList = () => {
+type CoursesType = Pick<CoursesProps, 'setCourses'>; 
+
+const EmptyCoursesList = ( { setCourses } : CoursesType) => {
+    
+    const clearLocalStorage  = () => {
+        localStorage.clear();
+        setCourses(mockedCoursesList);
+    }
+
     return (
         <section className="emptyCoursesList">
             <div className="emptyCoursesList-inner">
-                <h1 className="emptyCoursesList-title">Your List is Empty</h1>
-                <p className="emptyCoursesList-desc">Please you Add new course button</p>
-                <button className="emptyCoursesList-btn btn-primary">Add new course</button>
-            </div>
+                <h1 className="emptyCoursesList-title">{EMPTY_COURSES_LIST.title}</h1>
+                <p className="emptyCoursesList-desc">{EMPTY_COURSES_LIST.desc}</p>
+                <button className="emptyCoursesList-btn btn-primary" onClick={clearLocalStorage}>{EMPTY_COURSES_LIST.btnText}</button>
+            </div> 
         </section>
     )
 }
