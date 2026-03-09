@@ -2,7 +2,7 @@ function padByZero(input: number | Date) {
   return input.toString().padStart(2, '0');
 }
 
-export const formatDate = (dateStr: string) => {
+export const formatDate = (dateStr: string): string | undefined => {
   if(typeof dateStr === 'string') {
     const date = new Date(dateStr);
     const month = padByZero(date.getMonth() + 1);
@@ -10,4 +10,5 @@ export const formatDate = (dateStr: string) => {
     const year = padByZero(date.getFullYear());
     return `${day}.${month}.${year}`;
   }
+  return undefined
 }
