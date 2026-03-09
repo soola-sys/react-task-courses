@@ -30,3 +30,14 @@ export interface CoursesProps  {
 export type setCourseOpenType = (isOpen: boolean | null) => void;
 
 export type setCurrentCourseType = (course: CourseItemProps) => void;
+
+export type CourseDetailItem = {
+  label: string;
+  value: string | undefined;
+}
+
+export type EmptyCoursesListType = {
+  title: string;
+  desc: string;
+  btnText: string;
+}

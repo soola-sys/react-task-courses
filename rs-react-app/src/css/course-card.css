@@ -15,9 +15,16 @@
 
 .courseCard-list {
   display: flex;
-  align-items: flex-start;
   gap: 8px 0;
+  max-width: 350px;
   flex-direction: column;
+}
+
+.courseCard-list-item {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .courseCard-btns {

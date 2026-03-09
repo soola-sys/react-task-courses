@@ -2,8 +2,7 @@ import { memo, useState } from "react";
 import type { CourseItemProps, CoursesProps } from "../types/types";
 import CourseList from "./CourseList";
 import { SEARCH_PROPS } from "../constants/search";
-
-const ADD_COURSE_BUTTON_TEXT: string = "Add new course";
+import { EMPTY_COURSES_LIST } from "../constants/courses";
 
 const Courses = memo(function Courses({ courses, setCourses, setOpen, setCurrentCourse }: CoursesProps) {
   const [search, setSearch ] = useState('');
@@ -18,8 +17,9 @@ const Courses = memo(function Courses({ courses, setCourses, setOpen, setCurrent
          }
        })
     }
-    return null
+    return null;
   }
+
   return (
     <>
       <section className="courses">
@@ -43,9 +43,9 @@ const Courses = memo(function Courses({ courses, setCourses, setOpen, setCurrent
                 Search
               </button>
             </div>
-            <button className="courses-btn btn-primary">{ADD_COURSE_BUTTON_TEXT}</button>
+            <button className="courses-btn btn-primary">{EMPTY_COURSES_LIST.btnText}</button>
           </div>
-          <CourseList courses={courses} setOpen={setOpen} setCurrentCourse={setCurrentCourse}/>
+          <CourseList courses={courses} setOpen={setOpen} setCourses={setCourses} setCurrentCourse={setCurrentCourse}/>
       </section>
     </>
   );
