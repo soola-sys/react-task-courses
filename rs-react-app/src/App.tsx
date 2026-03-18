@@ -2,6 +2,7 @@ import './App.css';
 import './css/header.css';
 import './css/courses.css';
 import './css/course-card.css';
+import './css/login-page.css';
 
 import Header from './components/Header';
 import CourseInfo from './components/CourseInfo';
@@ -10,6 +11,7 @@ import { mockCurrentCoursesList } from "./mockCoursesList";
 import { useState } from 'react';
 import type { CourseItemProps } from './types/types';
 import EmptyCoursesList from './components/EmptyCoursesList';
+import LoginPage from './components/LoginPage';
 
 
 export default function App() {
@@ -24,6 +26,7 @@ export default function App() {
       <div className="wrapper">
         <Header />
         {
+          
           courses?.length ?  (<main className="container">
           {
            isOpen ? (<CourseInfo isOpen={isOpen} currentCourse={currentCourse} resetOpen={setOpen} />) : (
