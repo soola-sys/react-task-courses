@@ -41,3 +41,7 @@ export type EmptyCoursesListType = {
   desc: string;
   btnText: string;
 }
+
+export interface LoginType {
+  setLogin: (isLogin: boolean) => void;
+}

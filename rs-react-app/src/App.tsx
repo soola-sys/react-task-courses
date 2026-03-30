@@ -8,7 +8,7 @@ import Header from './components/Header';
 import CourseInfo from './components/CourseInfo';
 import Courses from './components/Courses';
 import { mockCurrentCoursesList } from "./mockCoursesList";
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import type { CourseItemProps } from './types/types';
 import EmptyCoursesList from './components/EmptyCoursesList';
 import LoginPage from './components/LoginPage';
@@ -20,20 +20,30 @@ export default function App() {
     return saved ? JSON.parse(saved) : mockCurrentCoursesList;
   });
   const [isOpen, setOpen] = useState<boolean | null>(false);
+  const [login, setLogin] = useState<boolean>(false);
   const [currentCourse , setCurrentCourse] = useState<CourseItemProps | null>(null);
+
+  useEffect(() => {
+      const data = localStorage.getItem("userData");
+      if(data) {
+          const { accessToken } = JSON.parse(data);
+          if(accessToken) {
+              setLogin(true);
+          }
+      }
+  }, []);
   return (
     <>
       <div className="wrapper">
-        <Header />
+        <Header setLogin={setLogin}/>
         {
-          
-          courses?.length ?  (<main className="container">
-          {
-           isOpen ? (<CourseInfo isOpen={isOpen} currentCourse={currentCourse} resetOpen={setOpen} />) : (
-           <Courses courses={courses} setCourses={setCourses} setOpen={setOpen} setCurrentCourse={setCurrentCourse}/>
-           )
-          }
-        </main>) : <EmptyCoursesList setCourses={setCourses} />
+          login ? (courses?.length ? (<main className="container">
+            {
+              isOpen ? (<CourseInfo isOpen={isOpen} currentCourse={currentCourse} resetOpen={setOpen} />) : (
+                  <Courses courses={courses} setCourses={setCourses} setOpen={setOpen} setCurrentCourse={setCurrentCourse}/>
+              )
+            }
+          </main>): <EmptyCoursesList setCourses={setCourses} />) : <LoginPage setLogin={setLogin} />
         }
       </div>
     </>
